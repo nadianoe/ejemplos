@@ -14,7 +14,7 @@ function conectar_con_mysql($servername,$username,$password){
     return $conexion;
 }
 
-function conectar_a_base_de_datos($nombre_db,$servername,$username,$password){
+function conectar_con_base_de_datos($nombre_db,$servername,$username,$password){
     
     $conexion = mysqli_connect($servername, $username, $password, $nombre_db);
     if ($conexion) {
