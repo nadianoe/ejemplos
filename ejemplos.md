@@ -1,6 +1,7 @@
 ### Ejemplos vistos | 4CSTC | Bases de Datos    | MySQL - PHP
 
 ##### Funciones 
+
 ```php
 function conectar_con_mysql($servername,$username,$password){ 
     
@@ -24,31 +25,21 @@ function conectar_a_base_de_datos($nombre_db,$servername,$username,$password){
     return $conexion;
 }
 
+/*
+ * La siguiente función sirve para:
+     * Creación de bases de datos
+     * Creación de tablas
+     * inserción simple
+     * actualización de datos
+     * eliminación de datos
+ */
 
-function crear_base_de_datos($nombre_db,$conexion,$consulta_sql) {
+function ejecutar_consulta($nombre_db,$conexion,$consulta_sql) {
     
     if (mysqli_query($conexion, $consulta_sql)) {
-        echo "<p> Creación de tabla exitosa </p>";
+        echo "<p> Ejecución exitosa de consulta " . $consulta_sql . "</p>";
     } else {
         echo "<p> Error " . mysqli_error($conexion) . "</p>";
-    }
-}
-
-function crear_tabla($conexion,$nombre_de_tabla,$consulta_sql){ 
-    
-    if (mysqli_query($conexion, $consulta_sql)) {
-        echo "<p> Tabla $nombre_de_tabla creada con éxito </p>";
-    } else {
-        echo "<p> Error: " . mysqli_error($conexion) . '</p>';
-    }
-}
-
-function insercion_simple($conexion,$nombre_de_tabla){
-    
-    if (mysqli_query($conexion, $consulta_sql)) {
-        echo "<p> inserción realizadas con éxito </p>";
-    } else {
-        echo "<p> Error: " . mysqli_error($conexion) . '</p>';
     }
 }
 
