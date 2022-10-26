@@ -210,7 +210,7 @@ function conectar_y_obtener_datos() {
     
     <body>
         
-        <button onclick="enviarInEjemplocionConAJAX()"> 
+        <button onclick="enviarInformacionConAJAX()"> 
             ENVIAR DATOS CON AJAX
         </button>
         
@@ -220,11 +220,11 @@ function conectar_y_obtener_datos() {
         
         <script>
 
-            function enviarInEjemplocionConAJAX() {
+            function enviarInformacionConAJAX() {
     
                 let nombre = 'Gloria';
                 let listaDeNumeros = [1, 3, 4, 5];
-                let inEjemplocion = {
+                let informacion = {
                                     nombre_admin : nombre,
                                     ids_usuarios : listaDeNumeros
                                   }
@@ -232,7 +232,7 @@ function conectar_y_obtener_datos() {
                 $.ajax({
                     type: "POST",
                     url: "respuesta4.php",
-                    data: inEjemplocion
+                    data: informacion
                 }).done(function (respuesta) {
                     $('#contenido').html(respuesta);
     
